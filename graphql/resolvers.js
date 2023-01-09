@@ -10,12 +10,12 @@ const resolvers = {
         }
     },
     Mutation : {
-        async addUser(root , { firstname , lastname , email , phone } , {db}){
+        async addUser(root , args , {db}){
             return await db.users.create({
-                firstname,
-                lastname,
-                email,
-                phone
+                firstname : args.firstname,
+                lastname : args.lastname,
+                email : args.email,
+                phone : args.phone
             });
         }
     }
